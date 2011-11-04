@@ -1,17 +1,19 @@
-require 'rails/generators/active_record'
+require 'rails/generators/active_record/model/model_generator'
 
 module HasMysqlFulltext 
-  class InstallGenerator  < ActiveRecord::Generators::Base
+  class InstallGenerator  < ActiveRecord::Generators::ModelGenerator
+
+    argument :name, :default => "fulltext_index"
+     
+
       source_root File.expand_path("../templates", __FILE__)
 
       def copy_migration
         create_migration_file
-        #migration_template "migration.rb", "db/migrate/create_fulltext_indicies.rb"
       end
 
       def generate_model
         create_model_file
-        #invoke "active_record:model", [name], :migration => false unless model_exists? && behavior == :invoke
       end
       
     

@@ -2,8 +2,8 @@ require 'rubygems'
 require 'active_record'
 
 module HasMysqlFulltext
-	autoload :Index,     'index/base'
-	autoload :Indexable, 'indexable/base'
+	autoload :Index,     'has_mysql_fulltext/index'
+	autoload :Indexable, 'has_mysql_fulltext/indexable'
 	def has_mysql_fulltext
 		include HasMysqlFulltext::Indexable
 	end
