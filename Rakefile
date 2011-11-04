@@ -13,12 +13,12 @@ require 'rake'
 
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
-  gem.name = "acts-as-mysql-fulltext"
+  gem.name = "has_mysql_fulltext"
   gem.summary = %Q{fulltext searching in mysql for rails}
-  gem.description = %Q{TODO: longer description of your gem}
-  gem.email = ["spam@codeofficer.com", "james@greenvan.com"]
-  gem.homepage = "http://github.com/CodeOfficer/acts-as-mysql-fulltext"
-  gem.authors = ["Russell Jones", "James Daniels"]
+  gem.description = %Q{fulltext searching in mysql for rails, based at http://github.com/CodeOfficer/acts-as-mysql-fulltext}
+  gem.email = ["dusanek@iquest.cz"]
+  gem.homepage = "http://github.com/iquest/has_mysql_fulltext"
+  gem.authors = ["Pavel Dusanek"]
   gem.add_development_dependency "rspec"
   gem.add_development_dependency "activerecord"
   # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
@@ -54,7 +54,7 @@ Rake::RDocTask.new do |rdoc|
   end
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "acts-as-mysql-fulltext #{version}"
+  rdoc.title = "has_mysql_fulltext #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
