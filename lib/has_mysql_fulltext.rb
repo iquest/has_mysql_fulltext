@@ -10,9 +10,3 @@ module HasMysqlFulltext
 end
 
 ActiveRecord::Base.extend HasMysqlFulltext
-
-if ActiveRecord::Base.connection.table_exists? "fulltext_indicies"
-  class FulltextIndex < ActiveRecord::Base
-	  include HasMysqlFulltext::Index
-  end
-end
