@@ -1,7 +1,7 @@
 Description:
-	The fulltext migration generator creates a migration to add the fulltext_indices table.
+	The fulltext install generator creates a migration to add the fulltext_indices table and coresponding model.
 
 Example:
-    ./script/generate fulltext_migration
+    rails generate has_mysql_fulltext:install
 
     This will create a migration in db/migrate/.  Run "rake db:migrate" to update your database.
