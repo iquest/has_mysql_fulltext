@@ -1,4 +1,4 @@
-module ActsAsMysqlFulltext
+module HasMysqlFulltext
 	module Index
 		def self.included(base)
 			autoload :ClassMethods,    'index/class_methods'

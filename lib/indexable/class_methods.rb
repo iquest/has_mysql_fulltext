@@ -1,4 +1,4 @@
-module ActsAsMysqlFulltext
+module HasMysqlFulltext
 	module Indexable
 		module ClassMethods
 			def fulltext_index_columns

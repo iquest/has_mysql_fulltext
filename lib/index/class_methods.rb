@@ -1,4 +1,4 @@
-module ActsAsMysqlFulltext
+module HasMysqlFulltext
 	module Index
 		module ClassMethods
 		end

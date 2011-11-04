@@ -1,4 +1,4 @@
-module ActsAsMysqlFulltext
+module HasMysqlFulltext
 	module Indexable
 		module InstanceMethods
 			def fulltext_index_tokens
@@ -7,10 +7,10 @@ module ActsAsMysqlFulltext
 				end.join(' ').strip
 			end
 			def create_the_fulltext_index
-				build_fulltext_index(:tokens => fulltext_index_tokens)
+				build_fulltext_index(:data => fulltext_index_tokens)
 			end
 			def update_the_fulltext_index
-				fulltext_index.update_attribute(:tokens, fulltext_index_tokens)
+				fulltext_index.update_attribute(:data, fulltext_index_tokens)
 			end
 			def create_or_update_the_fulltext_index
 				fulltext_index.nil? ? create_the_fulltext_index : update_the_fulltext_index

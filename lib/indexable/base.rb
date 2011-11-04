@@ -1,4 +1,4 @@
-module ActsAsMysqlFulltext
+module HasMysqlFulltext
 	module Indexable
 		def self.included(base)
 			autoload :ClassMethods,    'indexable/class_methods'
