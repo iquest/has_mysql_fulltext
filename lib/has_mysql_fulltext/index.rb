@@ -1,6 +1,5 @@
 module HasMysqlFulltext
   class Index < ActiveRecord::Base
-    table_name 'fulltext_index'
     
     def self.included(base)
       autoload :ClassMethods,    'index/class_methods'
