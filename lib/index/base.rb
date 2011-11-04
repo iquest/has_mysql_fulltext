@@ -10,4 +10,8 @@ module HasMysqlFulltext
 			end
 		end
 	end
+	
+	class FulltextIndex < ActiveRecord::Base
+	  include HasMysqlFulltext::Index
+	end
 end
