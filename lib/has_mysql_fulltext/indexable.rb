@@ -1,16 +1,9 @@
 module HasMysqlFulltext
   module Indexable
     def self.included(base)
-      autoload :ClassMethods,    'indexable/class_methods'
-      
-      
-      autoload :InstanceMethods, 'indexable/instance_methods'
-      base.class_eval do
-        include InstanceMethods
-        extend  ClassMethods
-        after_save :create_or_update_the_fulltext_indices
-        has_many :fulltext_indices, :as => :indexable, :dependent => :destroy
-      end
+      autoload :ClassMethods,    'has_mysql_fulltext/indexable/class_methods'
+      autoload :InstanceMethods, 'has_mysql_fulltext/indexable/instance_methods'
+      base.extend  ClassMethods
     end
   end
 end

@@ -1,6 +1,37 @@
-= acts-as-mysql-fulltext
+= has_mysql_fulltext
 
-Description goes here.
+== Installation
+
+Add it into the Gemfile
+
+  gem 'has_mysql_fulltext'
+
+Then execute
+  
+  bundle installl
+  
+Create migration and coresponding model
+
+  rails g has_mysql_fulltext:install
+  
+== Usage
+
+You can specify fulltext index for some attributes in your model
+
+  class Post < ActiveRecord::Base
+    has_many :comments
+    belongs_to :author
+  
+    has_mysql_fulltext do
+      fulltext_attribute :title
+      fulltext_attribute :body
+    end 
+  end
+  
+Then you can use fulltext serarch by these attributes
+
+  Post.search("some text")
+
 
 == Note on Patches/Pull Requests
  

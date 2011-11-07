@@ -8,25 +8,21 @@ module HasMysqlFulltext
           after_save :create_or_update_the_fulltext_indices
           has_many :fulltext_indices, :as => :indexable, :dependent => :destroy
         end
-        send :include, HasMysqlFulltext::Indexable::InstanceMethods
+
+        send :include, InstanceMethods
       end
       
       def fulltext_attribute name
           name = name.to_s if !name.is_a? String
-          self.class_eav_attributes[name] = type
+          self.class_fulltext_attributes << name
       end
       
       def class_fulltext_attributes
-        @eav_attributes
+        @fulltext_attributes
       end
 
-      
-			def fulltext_index_columns
-			  
-				self.columns.select {|c| c.type == :string}.map(&:name).map(&:to_sym)
-			end
 			def search(expr, options = {})
-				self.find(:all, options)
+				self.joins(:fulltex_indices).where("MATCH(fulltext_indices.data) AGAINST (? IN BOOLEAN MODE)",  expr.strip)
 			end
 			def create_fulltext_indices
 				transaction do
