@@ -1,3 +1,3 @@
-class <%= class_name %> < HasMysqlFulltext::Index
-  set_table_name '<%= table_name %>'
+class <%= class_name %> < HasMysqlFulltext::Index::Base
+
 end
