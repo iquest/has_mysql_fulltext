@@ -6,4 +6,4 @@ module HasMysqlFulltext
 	autoload :Indexable, 'has_mysql_fulltext/indexable'
 end
 
-ActiveRecord::Base.send :include, HasMysqlFulltext::Indexable
+ActiveRecord::Base.send :extend, HasMysqlFulltext::Indexable

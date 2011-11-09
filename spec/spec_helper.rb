@@ -1,6 +1,6 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
-require 'acts-as-mysql-fulltext'
+require 'has_mysql_fulltext'
 require 'active_record'
 require 'spec'
 require 'spec/autorun'

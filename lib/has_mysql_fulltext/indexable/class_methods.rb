@@ -1,17 +1,6 @@
 module HasMysqlFulltext
   module Indexable
     module ClassMethods
-      def has_mysql_fulltext opts={}, &block
-        @indexable_attributes = []
-        @indexable_class = self.to_s.camelize.constantize
-        yield if block_given?
-        class_eval do
-          after_save :create_fulltext_indices
-          has_many :fulltext_indices, :as => :indexable, :dependent => :destroy
-        end
-
-        send :include, InstanceMethods
-      end
 
       def indexable_attribute name
         attr_name = name.to_s if !name.is_a? String
