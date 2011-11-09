@@ -37,10 +37,10 @@ Gem::Specification.new do |s|
     "lib/has_mysql_fulltext/indexable/class_methods.rb",
     "lib/has_mysql_fulltext/indexable/instance_methods.rb",
     "scratchpad.txt",
-    "spec/acts-as-mysql-fulltext_spec.rb",
     "spec/db/database.yml",
     "spec/db/models.rb",
     "spec/db/schema.rb",
+    "spec/has_mysql_fulltext_spec.rb",
     "spec/something_with_fulltext_spec.rb",
     "spec/spec_helper.rb"
   ]
@@ -55,6 +55,7 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<activerecord>, ["~> 3.1.0"])
+      s.add_runtime_dependency(%q<mysql2>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.4"])
@@ -64,6 +65,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<activerecord>, [">= 0"])
     else
       s.add_dependency(%q<activerecord>, ["~> 3.1.0"])
+      s.add_dependency(%q<mysql2>, [">= 0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
@@ -74,6 +76,7 @@ Gem::Specification.new do |s|
     end
   else
     s.add_dependency(%q<activerecord>, ["~> 3.1.0"])
+    s.add_dependency(%q<mysql2>, [">= 0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
