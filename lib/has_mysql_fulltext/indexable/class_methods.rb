@@ -21,8 +21,8 @@ module HasMysqlFulltext
 
       def search(expr, options = {})
         conditions = options.delete :conditions
-        FulltextIndex.where(:indexable_type => indexable_class).match(expr).map(&:indexable)
-      #self.joins(:fulltext_indices).where("MATCH(fulltext_indices.data) AGAINST (? IN BOOLEAN MODE)",  expr.strip)
+        indexable_ids = FulltextIndex.where(:indexable_type => indexable_class).match(expr).map(&:indexable_id)
+	self.where(indexable_class.primary_key.to_sym => indexable_ids)
       end
 
       def create_fulltext_indices
