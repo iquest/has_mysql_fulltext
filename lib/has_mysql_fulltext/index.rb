@@ -1,12 +1,12 @@
 module HasMysqlFulltext
   module Index
-    class Base < ActiveRecord::Base    
+    class Base < ActiveRecord::Base
+      set_table_name 'fulltext_indices'
+          
       autoload :ClassMethods,    'has_mysql_fulltext/index/class_methods'
       autoload :InstanceMethods, 'has_mysql_fulltext/index/instance_methods'
       include InstanceMethods
       extend  ClassMethods
-      
-      set_table_name 'fulltext_indices'
 
       belongs_to :indexable, :polymorphic => true
       
