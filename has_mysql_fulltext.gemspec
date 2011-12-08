@@ -4,13 +4,13 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{has_mysql_fulltext}
+  s.name = "has_mysql_fulltext"
   s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Pavel Dusanek"]
-  s.date = %q{2011-11-22}
-  s.description = %q{fulltext searching in mysql for rails, based at http://github.com/CodeOfficer/acts-as-mysql-fulltext}
+  s.date = "2011-12-08"
+  s.description = "fulltext searching in mysql for rails, based at http://github.com/CodeOfficer/acts-as-mysql-fulltext"
   s.email = ["dusanek@iquest.cz"]
   s.extra_rdoc_files = [
     "LICENSE",
@@ -44,13 +44,12 @@ Gem::Specification.new do |s|
     "spec/something_with_fulltext_spec.rb",
     "spec/spec_helper.rb"
   ]
-  s.homepage = %q{http://github.com/iquest/has_mysql_fulltext}
+  s.homepage = "http://github.com/iquest/has_mysql_fulltext"
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
-  s.summary = %q{fulltext searching in mysql for rails}
+  s.rubygems_version = "1.8.10"
+  s.summary = "fulltext searching in mysql for rails"
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
