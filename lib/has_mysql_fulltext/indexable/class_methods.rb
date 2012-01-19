@@ -19,7 +19,7 @@ module HasMysqlFulltext
         @indexable_attributes
       end
 
-      def search(expr, options = {})
+      def fulltext_search(expr, options = {})
         conditions = options.delete :conditions
         indexable_ids = FulltextIndex.where(:indexable_type => indexable_class).match(expr).map(&:indexable_id)
 	self.where(indexable_class.primary_key.to_sym => indexable_ids)
