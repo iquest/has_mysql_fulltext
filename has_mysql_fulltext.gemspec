@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Pavel Dusanek"]
-  s.date = "2011-12-08"
+  s.date = "2012-01-19"
   s.description = "fulltext searching in mysql for rails, based at http://github.com/CodeOfficer/acts-as-mysql-fulltext"
   s.email = ["dusanek@iquest.cz"]
   s.extra_rdoc_files = [
