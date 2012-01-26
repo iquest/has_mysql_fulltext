@@ -30,7 +30,7 @@ You can specify fulltext index for some attributes in your model
   
 Then you can use fulltext serarch by these attributes
 
-  Post.search("some text")
+  Post.fulltext_search("some text")
 
 
 == Note on Patches/Pull Requests
@@ -47,3 +47,4 @@ Then you can use fulltext serarch by these attributes
 == Copyright
 
 Copyright (c) 2010 Russell Jones. See LICENSE for details.
+Copyright (c) 2011-2012 Pavel Dušánek. See LICENSE for details.

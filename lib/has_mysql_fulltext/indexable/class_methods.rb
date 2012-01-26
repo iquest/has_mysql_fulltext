@@ -1,7 +1,6 @@
 module HasMysqlFulltext
   module Indexable
     module ClassMethods
-
       def indexable_attribute name
         attr_name = name.to_s if !name.is_a? String
         self.indexable_attributes << attr_name
@@ -11,7 +10,7 @@ module HasMysqlFulltext
         if superclass != ActiveRecord::Base
           @indexable_class ? @indexable_class : superclass.indexable_class
         else
-          @indexable_class
+        @indexable_class
         end
       end
 
@@ -22,7 +21,7 @@ module HasMysqlFulltext
       def fulltext_search(expr, options = {})
         conditions = options.delete :conditions
         indexable_ids = FulltextIndex.where(:indexable_type => indexable_class).match(expr).map(&:indexable_id)
-	self.where(indexable_class.primary_key.to_sym => indexable_ids)
+        self.where(indexable_class.primary_key.to_sym => indexable_ids)
       end
 
       def create_fulltext_indices
