@@ -17,7 +17,6 @@ Gem::Specification.new do |s|
     "README.rdoc"
   ]
   s.files = [
-    ".document",
     "Gemfile",
     "LICENSE",
     "README.rdoc",
@@ -35,7 +34,6 @@ Gem::Specification.new do |s|
     "lib/has_mysql_fulltext/indexable.rb",
     "lib/has_mysql_fulltext/indexable/class_methods.rb",
     "lib/has_mysql_fulltext/indexable/instance_methods.rb",
-    "scratchpad.txt",
     "spec/db/database.yml",
     "spec/db/models.rb",
     "spec/db/schema.rb",
