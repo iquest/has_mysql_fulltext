@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "has_mysql_fulltext"
-  s.version = "0.1.2"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Pavel Dusanek"]
@@ -29,8 +29,6 @@ Gem::Specification.new do |s|
     "lib/generators/has_mysql_fulltext/templates/model.rb",
     "lib/has_mysql_fulltext.rb",
     "lib/has_mysql_fulltext/index.rb",
-    "lib/has_mysql_fulltext/index/class_methods.rb",
-    "lib/has_mysql_fulltext/index/instance_methods.rb",
     "lib/has_mysql_fulltext/indexable.rb",
     "lib/has_mysql_fulltext/indexable/class_methods.rb",
     "lib/has_mysql_fulltext/indexable/instance_methods.rb",
