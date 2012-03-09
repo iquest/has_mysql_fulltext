@@ -1,9 +1,9 @@
 require 'rubygems'
 require 'active_record'
 
-module HasMysqlFulltext
-	autoload :Index,     'has_mysql_fulltext/index'
-	autoload :Indexable, 'has_mysql_fulltext/indexable'
+module HasMysqlFulltext     
+	require 'has_mysql_fulltext/index' 
+	require 'has_mysql_fulltext/indexable'
 end
 
 ActiveRecord::Base.send :extend, HasMysqlFulltext::Indexable
