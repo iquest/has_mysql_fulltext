@@ -14,7 +14,7 @@ module HasMysqlFulltext
       scope :attribute_match, lambda { |attr, expr| where("indexable_attribute = ?", attr).where("MATCH(fulltext_indices.data) AGAINST (? IN BOOLEAN MODE)",  prepare_expression(expr.strip)) }
       
       def self.prepare_expression(expr = "")
-        expr.to_s.gsub(/[^\w\s]/, '').tr_s(" "," ").strip.split.uniq.map {|word| "+#{word}*" unless word.length < min_word_len}.join(" ")
+        expr.to_s.gsub(/[^[:alnum:][:blank:]]/, '').tr_s(" "," ").strip.split.uniq.map {|word| "+#{word}*" unless word.length < min_word_len}.join(" ")
       end
       
       # minimum word length
