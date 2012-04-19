@@ -10,17 +10,24 @@ module HasMysqlFulltext
         if superclass != ActiveRecord::Base
           @indexable_class ? @indexable_class : superclass.indexable_class
         else
-        @indexable_class
+          @indexable_class
         end
       end
 
       def indexable_attributes
         @indexable_attributes
       end
-
+      
+      # fulltext_search("search expression", :attributes => [:title])
       def fulltext_search(expr, options = {})
         conditions = options.delete :conditions
-        indexable_ids = FulltextIndex.where(:indexable_type => indexable_class).match(expr).map(&:indexable_id)
+        # serach only in specific attributes
+        match_attributes = options.delete :attributes
+        # else search all indexed attributes
+        match_attributes ||= indexable_attributes
+        # make sure it's array
+        match_attribtes = [match_attributes].flatten
+        indexable_ids = FulltextIndex.where(:indexable_type => indexable_class).attributes_match(match_attributes, expr).map(&:indexable_id)
         self.where(indexable_class.primary_key.to_sym => indexable_ids)
       end
 
